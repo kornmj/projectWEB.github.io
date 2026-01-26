@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Login - Cardiac Rehab</title>
-    <link rel="stylesheet" href="..\style\style.css">
-    <link rel="stylesheet" href="..\style\auth.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/auth.css">
 </head>
 
 <body style="background-color: #f5f5f5;">
 
     <div class="header-strip">
         <h2 class="text-2xl font-bold">ผู้ป่วย (patient)</h2>
-        <a href="role_selection.html" style="color: white; font-size: 1rem;">back</a>
+        <a href="../html/role_selection.html" style="color: white; font-size: 1rem;">back</a>
     </div>
 
     <div class="container">
@@ -22,7 +22,7 @@
                 <span style="border-bottom: 5px solid var(--secondary-blue);">login</span>
             </h1>
 
-            <form action="patient_dashboard.html">
+            <form action="../html/patient_dashboard_patient.html">
                 <div class="form-group">
                     <label>เลขที่โรงพยาบาล (HN)</label>
                     <input type="text" class="form-input" id="patient_id">
@@ -55,7 +55,7 @@
             e.preventDefault();
 
             if (username.value === "patient" && password.value === "12345") {
-                window.location.href = '/html/patient_dashboard_patient.html';
+                window.location.href = '../html/patient_dashboard_patient.html';
             } else {
                 showError();
             }
