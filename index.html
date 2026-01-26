@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardiac Rehab Center - Ram Hospital</title>
-    <link rel="stylesheet" href="..\style\style.css">
-    <link rel="stylesheet" href="..\style\home.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/home.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="..\images/logo.png" alt="Ram Hospital Logo" style="height: 60px; cursor: pointer;" id="ram">
+            <img src="./images/logo.png" alt="Ram Hospital Logo" style="height: 60px; cursor: pointer;" id="ram">
             <!-- If text is needed next to logo as per mockup, uncomment below, but mockup shows image logo -->
             <!-- <div class="flex-column">
                 <span class="text-primary-blue font-bold text-xl uppercase">RAM HOSPITAL</span>
@@ -23,8 +23,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="role_selection.html">login</a></li>
-                <li><a href="contact_us.html">contact us</a></li>
+                <li><a href="./html/role_selection.html">login</a></li>
+                <li><a href="./html/contact_us.html">contact us</a></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +44,7 @@
                 </p>
             </div>
             <div>
-                <img src="..\images/medical_team_meeting.png" alt="Medical Team" class="medical-team-img">
+                <img src="./images/medical_team_meeting.png" alt="Medical Team" class="medical-team-img">
             </div>
         </div>
 
@@ -76,7 +76,7 @@
         <div class="container footer-content">
             <!-- Column 1: Logo & Address -->
             <div class="footer-column">
-                <img src="..\images/logo.png" alt="Ram Hospital" class="footer-logo">
+                <img src="./images/logo.png" alt="Ram Hospital" class="footer-logo">
                 <div class="footer-address">
                     <p>บริษัท โรงพยาบาล รามคำแหง จำกัด (มหาชน) 436</p>
                     <p>ถนนรามคำแหง แขวงหัวหมาก เขตบางกะปิ</p>
@@ -105,7 +105,7 @@
     <script>
         const ram = document.getElementById('ram');
         ram.addEventListener('click', () => {
-            window.location.href = 'index.html'
+            window.location.href = './index.html'
         })
     </script>
 </body>
