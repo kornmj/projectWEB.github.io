@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Cardiac Rehab</title>
+    <link rel="stylesheet" href="..\style\style.css">
+    <link rel="stylesheet" href="..\style\dashboard.css">
+</head>
+
+<body style="background-color: #f9f9f9;">
+
+    <div class="header-bg">s
+        <h2 class="text-2xl text-primary-blue font-bold">แพทย์ (Doctor)</h2>
+    </div>
+
+    <div class="container">
+        <div class="staff-form">
+            <!-- User Info Header -->
+            <div class="flex responsive-stack justify-between mb-2 gap-2">
+                <div class="user-badge">
+                    <h2 class="text-2xl font-bold mb-1">สวัสดี, คุณ xxxxxx</h2>
+                    <span class="user-tag">แพทย์ : xxxxxx</span>
+                </div>
+                <div>
+                    <a href="role_selection.html" class="btn btn-secondary"
+                        style="padding: 0.2rem 1.3rem; border-radius: 1rem; font-size: 1.2rem; text-decoration: underline;">back</a>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form>
+                <div class="form-group mb-1">
+                    <label>ชื่อ-นามสกุล ผู้ป่วย</label>
+                    <input type="text" class="form-input" placeholder="ชื่อ-นามสกุล ผู้ป่วย">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>หัตถการ (Procedure)</label>
+                        <select class="form-select">
+                            <option>PCI (สวนหัวใจ)</option>
+                            <option>CABG (ผ่าตัดบายพาส)</option>
+                            <option>Valve Repair</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>วันที่เข้ารับการรักษา</label>
+                        <input type="date" class="form-input">
+                    </div>
+                </div>
+
+                <div class="form-group mb-1">
+                    <label>อาการที่พบ</label>
+                    <input type="text" class="form-input" placeholder="อาการที่พบ ex แน่นหน้าอก,เหนื่อยง่าย">
+                </div>
+
+                <div class="form-group mb-2">
+                    <label>ยาที่จ่าย</label>
+                    <input type="text" class="form-input" placeholder="ยาที่จ่าย ex ยาแก้ปวด,ยาละลายลิ่มเลือด">
+                </div>
+
+                <!-- Gradient Assessment Box -->
+                <div
+                    style="background: linear-gradient(90deg, #b0ffb0 0%, #d0ffd0 100%); padding: 1.5rem; border-radius: 10px; border: 1px solid #a0e0a0; margin-bottom: 2rem;">
+                    <label class="font-bold block mb-1">ผลการทดสอบสมรรถภาพ (CPAD/CPET)</label>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="pass" style="transform: scale(1.5);">
+                        <label for="pass" class="font-bold text-xl cursor-pointer">ผ่านเกณฑ์ (Passed)</label>
+                    </div>
+                    <p class="text-sm mt-1" style="color: #444;">* ระบบจะจัดเข้า Program A อัตโนมัติหากผ่านเกณฑ์</p>
+                </div>
+
+                <div class="flex gap-1">
+                    <button type="button" class="btn btn-primary" style="flex: 1; border-radius: 10px;">save</button>
+                    <button type="button" class="btn"
+                        style="flex: 1; background: #ddd; color: #333; border-radius: 10px;">cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <!-- Column 1: Logo & Address -->
+            <div class="footer-column">
+                <img src="../images/logo.png" alt="Ram Hospital" class="footer-logo">
+                <div class="footer-address">
+                    <p>บริษัท โรงพยาบาล รามคำแหง จำกัด (มหาชน) 436</p>
+                    <p>ถนนรามคำแหง แขวงหัวหมาก เขตบางกะปิ</p>
+                    <p>กรุงเทพ 10240</p>
+                </div>
+            </div>
+
+            <!-- Column 2: Additional Services -->
+            <div class="footer-column">
+                <h3 class="footer-title">บริการเพิ่มเติม</h3>
+                <ul class="footer-links">
+                    <li><a href="#">สำหรับพนักงาน</a></li>
+                    <li><a href="#">คำชม</a></li>
+                    <li><a href="#">เอกสาร</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Channels -->
+            <div class="footer-column">
+                <h3 class="footer-title">ช่องทางติดต่ออื่นๆ</h3>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

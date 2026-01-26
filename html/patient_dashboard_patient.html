@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Cardiac Rehab</title>
+    <link rel="stylesheet" href="..\style\style.css">
+</head>
+
+<body style="background-color: #f9f9f9;">
+
+    <div class="dashboard-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="user-profile user-badge">
+                <h2 class="text-2xl font-bold">สวัสดี, คุณ xxxxxx</h2>
+                <div class="user-tag" id="doctor" onclick="window.location.href='doctor_profile.html'">แพทย์ : xxxxxx
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <!-- action-buttons replaced with flex gap-2 or keep action-buttons class if in css? It was inline flex gap 0.5rem in original internal style, I should check if .action-buttons is in style.css. I don't recall seeing it. I'll use inline style or utility for now, or add to CSS. Wait, style.css doesn't have action-buttons. I'll use flex classes. -->
+                <button class="btn btn-primary btn-sm">save</button>
+                <button class="btn btn-secondary btn-sm">report</button>
+                <button class="btn btn-secondary btn-sm" onclick="window.location.href='role_selection.html'">go
+                    back</button>
+            </div>
+        </div>
+
+        <!-- Inputs Grid -->
+        <div class="card-grid">
+            <!-- Health Data -->
+            <div class="card">
+                <div class="font-bold mb-1 flex items-center gap-2">❤️ บันทึกค่าสุขภาพ</div>
+                <div class="mb-1">
+                    <label class="block text-sm text-dark mb-1">ความดันโลหิต (mmHg)</label>
+                    <input type="text" class="form-input" id="blood" readonly>
+                </div>
+                <div class="mb-1">
+                    <label class="block text-sm text-dark mb-1">อัตราการเต้นหัวใจ (BPM)</label>
+                    <input type="text" class="form-input" id="heart_rate" readonly>
+                </div>
+                <button class="btn btn-primary"
+                    style="width: 100%; background: #ff6b6b; margin-top: 1rem;">บันทึกค่า</button>
+            </div>
+
+            <!-- Activity Data -->
+            <div class="card">
+                <div class="font-bold mb-1 flex items-center gap-2">🚶 บันทึกการออกกำลังกาย</div>
+                <div class="mb-1">
+                    <label class="block text-sm text-dark mb-1">กิจกรรม</label>
+                    <select class="form-select">
+                        <option>เดินเร็ว (brisk walk)</option>
+                        <option>วิ่งเหยาะ (jogging)</option>
+                        <option>ปั่นจักรยาน (cycling)</option>
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <label class="block text-sm text-dark mb-1">ระยะเวลา (นาที)</label>
+                    <input type="txt" class="form-input" id="duration" readonly>
+                </div>
+                <input type="text" id="result" readonly
+                    style="width: 100%; border-radius: 5px; padding: 0.5rem; border: 1px solid #ccc; font-size: 30px; text-align: center;font-weight: 100;font-size: 1rem;font-family: 'Prompt', sans-serif;margin-top: 10px;cursor: none;">
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="card mb-2">
+            <div class="font-bold mb-1">📊 สถิติการเต้นของหัวใจ (Heart Rate Trend)</div>
+            <p class="text-sm text-light mb-1">กราฟแสดงผลค่า HR ย้อนหลัง 7 วัน (Mockup Data)</p>
+            <div class="chart-container">
+                <div class="bar" style="height: 60%;"><span>72</span></div>
+                <div class="bar" style="height: 70%;"><span>78</span></div>
+                <div class="bar" style="height: 85%;"><span>84</span></div>
+                <div class="bar" style="height: 65%;"><span>73</span></div>
+                <div class="bar" style="height: 68%;"><span>76</span></div>
+                <div class="bar" style="height: 90%;"><span>90</span></div>
+            </div>
+        </div>
+
+        <!-- EKG Section -->
+        <div class="card">
+            <div class="font-bold mb-1">📄 รูปภาพคลื่นหัวใจ (EKG)</div>
+            <div class="upload-area">
+                <img src="../images/sinus_rhythm.gif" alt="">
+            </div>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <!-- Column 1: Logo & Address -->
+            <div class="footer-column">
+                <img src="../images/logo.png" alt="Ram Hospital" class="footer-logo">
+                <div class="footer-address">
+                    <p>บริษัท โรงพยาบาล รามคำแหง จำกัด (มหาชน) 436</p>
+                    <p>ถนนรามคำแหง แขวงหัวหมาก เขตบางกะปิ</p>
+                    <p>กรุงเทพ 10240</p>
+                </div>
+            </div>
+
+            <!-- Column 2: Additional Services -->
+            <div class="footer-column">
+                <h3 class="footer-title">บริการเพิ่มเติม</h3>
+                <ul class="footer-links">
+                    <li><a href="#">สำหรับพนักงาน</a></li>
+                    <li><a href="#">คำชม</a></li>
+                    <li><a href="#">เอกสาร</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Channels -->
+            <div class="footer-column">
+                <h3 class="footer-title">ช่องทางติดต่ออื่นๆ</h3>
+            </div>
+        </div>
+    </footer>
+    <script>
+        fetch("../jsonfile/data.json")
+            .then(response => response.json())
+            .then(data => {
+                const blood = document.getElementById("blood");
+                const heart_rate = document.getElementById("heart_rate");
+                const activity = document.getElementById("activity");
+                const duration = document.getElementById("duration");
+                const result = document.getElementById("result");
+
+                blood.value = data.blood;
+                heart_rate.value = data.heart_rate;
+                duration.value = data.duration;
+                result.value = data.result;
+            });
+
+
+        const doctor = document.getElementById("doctor");
+
+
+
+    </script>
+
+
+</body>
+
+</html>
