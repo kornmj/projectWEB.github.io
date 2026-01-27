@@ -382,7 +382,7 @@ img {
   background: var(--gradient-header);
   color: white;
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 2rem 1rem;
   width: 100%;
 }
 
@@ -659,7 +659,7 @@ img {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   header {
     flex-direction: column;
     gap: 1.5rem;
@@ -667,9 +667,10 @@ img {
   }
 
   nav ul {
-    gap: 1rem;
-    flex-direction: column;
+    gap: var(--spacing-lg);
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
   }
 
   .flex.responsive-stack,

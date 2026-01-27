@@ -7,7 +7,7 @@ btn.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (username.value === "admin" && password.value === "1234") {
-        window.location.href = '../html/patient_dashboard_staff.html';
+        window.location.href = '../html/patient_list.html';
     } else {
         showError();
     }

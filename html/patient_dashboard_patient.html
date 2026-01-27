@@ -17,13 +17,11 @@
                 <h2 class="text-2xl font-bold">สวัสดี, คุณ xxxxxx</h2>
                 <div class="user-tag" id="doctor" onclick="window.location.href='doctor_profile.html'">แพทย์ : xxxxxx
                 </div>
+                <div class="user-tag">จำนวนการออกกำลังกาย : 0 ครั้ง</div>
             </div>
             <div class="flex gap-2">
-                <!-- action-buttons replaced with flex gap-2 or keep action-buttons class if in css? It was inline flex gap 0.5rem in original internal style, I should check if .action-buttons is in style.css. I don't recall seeing it. I'll use inline style or utility for now, or add to CSS. Wait, style.css doesn't have action-buttons. I'll use flex classes. -->
-                <button class="btn btn-primary btn-sm">save</button>
-                <button class="btn btn-secondary btn-sm">report</button>
-                <button class="btn btn-secondary btn-sm" onclick="window.location.href='role_selection.html'">go
-                    back</button>
+                <button class="btn btn-secondary btn-sm"
+                    onclick="window.location.href='role_selection.html'">back</button>
             </div>
         </div>
 
@@ -50,8 +48,6 @@
                 <div class="mb-1">
                     <label class="block text-sm text-dark mb-1">กิจกรรม</label>
                     <select class="form-select">
-                        <option>เดินเร็ว (brisk walk)</option>
-                        <option>วิ่งเหยาะ (jogging)</option>
                         <option>ปั่นจักรยาน (cycling)</option>
                     </select>
                 </div>
